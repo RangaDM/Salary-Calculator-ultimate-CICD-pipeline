@@ -42,6 +42,10 @@ h3 {
   align-items: center;
 }
 
+.main-earningsCols{
+  max-width: fit-content;
+}
+
 @media (max-width: 410px) {
   .main-cal {
     justify-content: center;
@@ -52,6 +56,10 @@ h3 {
   }
   .side-col{
     display: none;
+  }
+  .btn{
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 }
 

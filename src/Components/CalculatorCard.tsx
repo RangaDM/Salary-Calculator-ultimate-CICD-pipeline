@@ -226,7 +226,7 @@ const CalculatorCard = () => {
             />
             {earningsCols.map((index) => (
               <div key={index} className="main-earningsCols align-items-center mt-2">
-                <div className="d-flex gap-2 common_row justify-content-between">
+                <div className="d-flex gap-2 common_row">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
                     type="text"
@@ -252,7 +252,7 @@ const CalculatorCard = () => {
                 </div>
                 <div className="d-flex">
                 <button
-                  className="close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
+                  className="btn close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
                   onClick={() => handleRemoveEarningsCol(index - 1)}
                 >
                   <img src={Closeassets} alt="Close" />
@@ -287,8 +287,8 @@ const CalculatorCard = () => {
               subtext="Salary Advances, fixed Allowance, Bonus and etc."
             />
             {deductionCols.map((index) => (
-              <div key={index} className="d-flex align-items-center mt-2">
-                <div className="d-flex gap-2 common_row justify-content-between">
+              <div key={index} className="main-earningsCols align-items-center mt-2">
+                <div className="d-flex gap-2 common_row">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
                     type="text"
@@ -314,7 +314,7 @@ const CalculatorCard = () => {
                   />
                 </div>
                 <button
-                  className="close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center w-4"
+                  className="btn close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center w-4"
                   onClick={() => handleRemoveDeductionCol(index - 1)}
                 >
                   <img src={Closeassets} alt="Close" />
