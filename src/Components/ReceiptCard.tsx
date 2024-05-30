@@ -25,7 +25,6 @@ const ReceiptCard: React.FC<ReceiptCardProps> = ({
   employerETF,
   CTC,
 }) => {
-
   return (
     <div>
       <div className="receipt-card border rounded-2 m-4 p-4 bg-white text-start">
@@ -34,29 +33,70 @@ const ReceiptCard: React.FC<ReceiptCardProps> = ({
         </div>
 
         <div className="d-flex justify-content-between mt-3">
-          <p className="fw-semibold text-secondary">Item</p>
+          <p className="fw-semibold text-secondary">Items</p>
           <p className="fw-semibold text-secondary">Amount</p>
         </div>
 
-        <ReceiptCardItem label="Basic Salary" amount={basicSalary.toFixed(2)} />
-        <ReceiptCardItem label="Gross Earning" amount={grossEarning.toFixed(2)} />
-        <ReceiptCardItem label="Gross Deduction" amount={grossDeduction.toFixed(2)} />
-        <ReceiptCardItem label="Employee EPF (8%)" amount={employeeEPF.toFixed(2)} />
-        <ReceiptCardItem label="APIT" amount={APIT.toFixed(2)} />
-
-        <div className="net_salary border border-1 p-3 my-3">
+        <ReceiptCardItem
+          label="Basic Salary"
+          amount={parseFloat(basicSalary.toFixed(2)).toLocaleString()}
+        />
+        <ReceiptCardItem
+          label="Gross Earning"
+          amount={parseFloat(grossEarning.toFixed(2)).toLocaleString()}
+        />
+        <ReceiptCardItem
+          label="Gross Deduction"
+          amount={
+            grossDeduction !== 0
+              ? `-${parseFloat(grossDeduction.toFixed(2)).toLocaleString()}`
+              : parseFloat(grossDeduction.toFixed(2)).toLocaleString()
+          }
+        />
+        <ReceiptCardItem
+          label="Employee EPF (8%)"
+          amount={
+            employeeEPF !== 0
+              ? `-${parseFloat(employeeEPF.toFixed(2)).toLocaleString()}`
+              : parseFloat(employeeEPF.toFixed(2)).toLocaleString()
+          }
+        />
+        <ReceiptCardItem
+          label="APIT"
+          amount={
+            APIT !== 0
+              ? `-${parseFloat(APIT.toFixed(2)).toLocaleString()}`
+              : parseFloat(APIT.toFixed(2)).toLocaleString()
+          }
+        />
+        <div
+          className="net_salary border border-1 p-3 my-3"
+          style={{ borderRadius: "4px" }}
+        >
           <ReceiptCardItem
             className="my-auto fw-semibold"
             label="Net Salary (Take Home)"
-            amount={netSalary.toFixed(2)}
+            amount={parseFloat(netSalary.toFixed(2)).toLocaleString()}
           />
         </div>
 
-        <p className="fw-semibold text-secondary mt-4">Contribution from the Employer</p>
+        <p className="fw-semibold text-secondary mt-4">
+          Contribution from the Employer
+        </p>
 
-        <ReceiptCardItem label="Employer EPF (12%)" amount={employerEPF.toFixed(2)} />
-        <ReceiptCardItem label="Employer ETF (3%)" amount={employerETF.toFixed(2)} />
-        <ReceiptCardItem className="mt-4" label="CTC (Cost to Company)" amount={CTC.toFixed(2)} />
+        <ReceiptCardItem
+          label="Employer EPF (12%)"
+          amount={parseFloat(employerEPF.toFixed(2)).toLocaleString()}
+        />
+        <ReceiptCardItem
+          label="Employer ETF (3%)"
+          amount={parseFloat(employerETF.toFixed(2)).toLocaleString()}
+        />
+        <ReceiptCardItem
+          className="mt-4"
+          label="CTC (Cost to Company)"
+          amount={parseFloat(CTC.toFixed(2)).toLocaleString()}
+        />
       </div>
     </div>
   );

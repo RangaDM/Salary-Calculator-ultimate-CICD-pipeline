@@ -234,11 +234,23 @@ const CalculatorCard = () => {
                     className="input_field_amount border rounded-1 px-3 text-end"
                     type="text"
                     placeholder="Amount"
-                    value={amountEarnings[index - 1]}
+                    value={
+                      amountEarnings[index - 1]
+                        ? parseFloat(amountEarnings[index - 1]).toLocaleString()
+                        : ""
+                    }
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       const newAmountEarnings = [...amountEarnings];
-                      newAmountEarnings[index - 1] = e.target.value;
+                      newAmountEarnings[index - 1] = e.target.value.replace(
+                        /,/g,
+                        ""
+                      );
                       setAmountEarnings(newAmountEarnings);
+                    }}
+                    onKeyPress={(event: React.KeyboardEvent) => {
+                      if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                      }
                     }}
                   />
                 </div>
@@ -268,7 +280,16 @@ const CalculatorCard = () => {
             className="border-0 bg-transparent text-primary my-4 d-flex align-items-center justify-content-center"
             onClick={handleAddEarningsCol}
           >
-            <img src={Addassets} alt="Add" /> Add New Allowance
+            <img className="w-24px h-24px" src={Addassets} alt="Add" />{" "}
+            <strong
+              style={{
+                color: "#0052EA",
+                fontSize: "14px",
+                fontWeight: "500",
+              }}
+            >
+              Add New Allowance
+            </strong>
           </button>
 
           <hr></hr>
@@ -276,7 +297,7 @@ const CalculatorCard = () => {
           <div className="deduction_col mt-4">
             <LabelField
               label="Deductions"
-              subtext="Salary Advances, fixed Allowance, Bonus and etc."
+              subtext="Salary Advances, Loan Deductions and all"
             />
             {deductionCols.map((index) => (
               <div
@@ -295,16 +316,29 @@ const CalculatorCard = () => {
                       setPayDetailsDeduction(newPayDetailsDeduction);
                     }}
                   />
-
                   <InputField
                     className="input_field_amount border rounded-1 px-3 text-end"
                     type="text"
                     placeholder="Amount"
-                    value={amountDeduction[index - 1]}
+                    value={
+                      amountDeduction[index - 1]
+                        ? parseFloat(
+                            amountDeduction[index - 1]
+                          ).toLocaleString()
+                        : ""
+                    }
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       const newAmountDeduction = [...amountDeduction];
-                      newAmountDeduction[index - 1] = e.target.value;
+                      newAmountDeduction[index - 1] = e.target.value.replace(
+                        /,/g,
+                        ""
+                      );
                       setAmountDeduction(newAmountDeduction);
+                    }}
+                    onKeyPress={(event: React.KeyboardEvent) => {
+                      if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                      }
                     }}
                   />
                 </div>
@@ -321,7 +355,16 @@ const CalculatorCard = () => {
               className="border-0 bg-transparent text-primary my-4 d-flex align-items-center justify-content-center"
               onClick={handleAddDeductionCol}
             >
-              <img src={Addassets} alt="Add" /> Add New Deduction
+              <img className="w-24px h-24px" src={Addassets} alt="Add" />{" "}
+              <strong
+                style={{
+                  color: "#0052EA",
+                  fontSize: "14px",
+                  fontWeight: "500",
+                }}
+              >
+                Add New Allowance
+              </strong>
             </button>
           </div>
         </div>
