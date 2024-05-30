@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles.css";
 import Addassets from "../assets/add.png";
 import Closeassets from "../assets/close.png";
-import Resetassets from "../assets/resetArrow.png";
+import Resetassets from "../assets/reset.png";
 import CheckBox from "./CheckBox";
 import InputField from "./InputField";
 import LabelField from "./LabelField";
