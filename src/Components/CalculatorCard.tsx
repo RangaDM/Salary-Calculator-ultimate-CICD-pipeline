@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import "../Styles.css";
 import Addassets from "../assets/add.png";
@@ -7,18 +8,6 @@ import CheckBox from "./CheckBox";
 import InputField from "./InputField";
 import LabelField from "./LabelField";
 import ReceiptCard from "./ReceiptCard";
-
-interface CalculatorCardProps {
-  basicSalary: number;
-  grossEarning: number;
-  grossDeduction: number;
-  employeeEPF: number;
-  APIT: number;
-  netSalary: number;
-  employerEPF: number;
-  employerETF: number;
-  CTC: number;
-}
 
 const CalculatorCard = () => {
   const [earningsCols, setEarningsCols] = useState([1]);
@@ -187,7 +176,7 @@ const CalculatorCard = () => {
 
   return (
     <div className="row mt-5 main-div">
-      <div className="col-md-1 side-col"/>
+      <div className="col-md-1 side-col" />
       <div className="main-cal col-md-6 md:col-auto sm:col-auto">
         <div className="calculator-card border rounded-2 m-4 p-4 text-bg-light text-start">
           <div
@@ -225,7 +214,10 @@ const CalculatorCard = () => {
               subtext="Allowance, Fixed Allowance, Bonus and etc."
             />
             {earningsCols.map((index) => (
-              <div key={index} className="main-earningsCols align-items-center mt-2">
+              <div
+                key={index}
+                className="main-earningsCols align-items-center mt-2"
+              >
                 <div className="d-flex gap-2 common_row">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
@@ -251,22 +243,22 @@ const CalculatorCard = () => {
                   />
                 </div>
                 <div className="d-flex">
-                <button
-                  className="btn close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
-                  onClick={() => handleRemoveEarningsCol(index - 1)}
-                >
-                  <img src={Closeassets} alt="Close" />
-                </button>
-                <CheckBox
-                  className="m-2 form-check-input"
-                  label={"EPF/ETF"}
-                  checked={epfEtfCheckedIndex[index - 1]}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    const newEpfEtf = [...epfEtfCheckedIndex];
-                    newEpfEtf[index - 1] = !epfEtfCheckedIndex[index - 1];
-                    setEpfEtfCheckedIndex(newEpfEtf);
-                  }}
-                />
+                  <button
+                    className="btn close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
+                    onClick={() => handleRemoveEarningsCol(index - 1)}
+                  >
+                    <img src={Closeassets} alt="Close" />
+                  </button>
+                  <CheckBox
+                    className="m-2 form-check-input"
+                    label={"EPF/ETF"}
+                    checked={epfEtfCheckedIndex[index - 1]}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      const newEpfEtf = [...epfEtfCheckedIndex];
+                      newEpfEtf[index - 1] = !epfEtfCheckedIndex[index - 1];
+                      setEpfEtfCheckedIndex(newEpfEtf);
+                    }}
+                  />
                 </div>
               </div>
             ))}
@@ -287,7 +279,10 @@ const CalculatorCard = () => {
               subtext="Salary Advances, fixed Allowance, Bonus and etc."
             />
             {deductionCols.map((index) => (
-              <div key={index} className="main-earningsCols align-items-center mt-2">
+              <div
+                key={index}
+                className="main-earningsCols align-items-center mt-2"
+              >
                 <div className="d-flex gap-2 common_row">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
@@ -332,7 +327,6 @@ const CalculatorCard = () => {
         </div>
       </div>
 
-
       <div className="main-sum col-md-4 md:col-auto sm:col-auto">
         <ReceiptCard
           basicSalary={basicSalary}
@@ -347,7 +341,7 @@ const CalculatorCard = () => {
         />
         <div className="col-md-1"></div>
       </div>
-      <div className="col-md-1 side-col"/>
+      <div className="col-md-1 side-col" />
     </div>
   );
 };

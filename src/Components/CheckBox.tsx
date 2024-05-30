@@ -4,10 +4,15 @@ interface CheckBoxProps {
   className?: string;
   label: string;
   checked?: boolean;
-  [key: string]: any; 
+  [key: string]: any;
 }
 
-const CheckBox: React.FC<CheckBoxProps> = ({ label, className, checked, ... rest}) => {
+const CheckBox: React.FC<CheckBoxProps> = ({
+  label,
+  className,
+  checked,
+  ...rest
+}) => {
   return (
     <div className="d-flex align-items-center">
       <input
