@@ -1,16 +1,12 @@
-name: Test and Deploy
+name: Run Tests
 
 on:
   push:
     branches:
       - main
-      - 'feature/**'
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,12 +27,3 @@ jobs:
 
     - name: Run tests
       run: npm test
-
-    - name: Build project
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
