@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/salary-calculator-2024-Q1-RangaDM/static/css/main.01fe93ed.css",
+    "main.css": "/salary-calculator-2024-Q1-RangaDM/static/css/main.1db5757a.css",
     "main.js": "/salary-calculator-2024-Q1-RangaDM/static/js/main.1867628b.js",
     "index.html": "/salary-calculator-2024-Q1-RangaDM/index.html",
-    "main.01fe93ed.css.map": "/salary-calculator-2024-Q1-RangaDM/static/css/main.01fe93ed.css.map",
+    "main.1db5757a.css.map": "/salary-calculator-2024-Q1-RangaDM/static/css/main.1db5757a.css.map",
     "main.1867628b.js.map": "/salary-calculator-2024-Q1-RangaDM/static/js/main.1867628b.js.map"
   },
   "entrypoints": [
-    "static/css/main.01fe93ed.css",
+    "static/css/main.1db5757a.css",
     "static/js/main.1867628b.js"
   ]
 }
