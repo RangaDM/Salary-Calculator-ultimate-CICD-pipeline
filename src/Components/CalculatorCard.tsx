@@ -225,8 +225,8 @@ const CalculatorCard = () => {
               subtext="Allowance, Fixed Allowance, Bonus and etc."
             />
             {earningsCols.map((index) => (
-              <div key={index} className="d-flex align-items-center mt-2">
-                <div className="d-flex common_row justify-content-between">
+              <div key={index} className="main-earningsCols align-items-center mt-2">
+                <div className="d-flex gap-2 common_row justify-content-between">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
                     type="text"
@@ -250,8 +250,9 @@ const CalculatorCard = () => {
                     }}
                   />
                 </div>
+                <div className="d-flex">
                 <button
-                  className="close_btn border border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
+                  className="close_btn border-0 bg-secondary-subtle rounded-circle mx-2 d-flex justify-content-center align-items-center"
                   onClick={() => handleRemoveEarningsCol(index - 1)}
                 >
                   <img src={Closeassets} alt="Close" />
@@ -266,6 +267,7 @@ const CalculatorCard = () => {
                     setEpfEtfCheckedIndex(newEpfEtf);
                   }}
                 />
+                </div>
               </div>
             ))}
           </div>
@@ -286,7 +288,7 @@ const CalculatorCard = () => {
             />
             {deductionCols.map((index) => (
               <div key={index} className="d-flex align-items-center mt-2">
-                <div className="d-flex common_row justify-content-between">
+                <div className="d-flex gap-2 common_row justify-content-between">
                   <InputField
                     className="input_field_type border rounded-1 px-2"
                     type="text"
@@ -329,6 +331,8 @@ const CalculatorCard = () => {
           </div>
         </div>
       </div>
+
+
       <div className="main-sum col-md-4 md:col-auto sm:col-auto">
         <ReceiptCard
           basicSalary={basicSalary}
