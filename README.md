@@ -57,6 +57,6 @@ This project provides a salary calculator. You can access the project using one 
 
 ## Method 3: Visiting the Website Directly
 
-I wrote complete GitHub Actions code for testing and deploying the project on GitHub Pages. So, you can visit the website directly from [https://rangadm.github.io/salary-calculator-2024-Q1-RangaDM/](https://rangadm.github.io/salary-calculator-2024-Q1-RangaDM/).
+I wrote complete GitHub Actions code for testing and deploying the project on GitHub Pages. So, you can visit the website directly from [https://rangadm.github.io/Salary-Calculator-ultimate-CICD-pipeline/](https://rangadm.github.io/Salary-Calculator-ultimate-CICD-pipeline/).
 
 If you're facing any issues when running the project, please contact me. Thank you!
