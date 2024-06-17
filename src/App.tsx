@@ -1,11 +1,7 @@
 import CalculatorCard from "./Components/CalculatorCard";
 
 function App() {
-  return (
-    <>
-      <CalculatorCard />
-    </>
-  );
+  return <CalculatorCard />;
 }
 
 export default App;

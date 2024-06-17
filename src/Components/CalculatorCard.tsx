@@ -248,7 +248,7 @@ const CalculatorCard = () => {
                       setAmountEarnings(newAmountEarnings);
                     }}
                     onKeyPress={(event: React.KeyboardEvent) => {
-                      if (!/[0-9]/.test(event.key)) {
+                      if (!/\d/.test(event.key)) {
                         event.preventDefault();
                       }
                     }}
@@ -336,7 +336,7 @@ const CalculatorCard = () => {
                       setAmountDeduction(newAmountDeduction);
                     }}
                     onKeyPress={(event: React.KeyboardEvent) => {
-                      if (!/[0-9]/.test(event.key)) {
+                      if (!/\d/.test(event.key)) {
                         event.preventDefault();
                       }
                     }}
