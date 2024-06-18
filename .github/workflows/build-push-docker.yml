@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   build-and-push:
@@ -27,4 +27,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: rangadm/salary-calculator-2024-q1-rangadm:latest
+        tags: rangadm/salary_calculator:${{ github.run_number }}
