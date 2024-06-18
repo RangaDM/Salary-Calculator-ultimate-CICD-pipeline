@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Salary-Calculator-ultimate-CICD-pipeline/static/css/main.1db5757a.css",
-    "main.js": "/Salary-Calculator-ultimate-CICD-pipeline/static/js/main.1867628b.js",
+    "main.js": "/Salary-Calculator-ultimate-CICD-pipeline/static/js/main.05aab95b.js",
     "index.html": "/Salary-Calculator-ultimate-CICD-pipeline/index.html",
     "main.1db5757a.css.map": "/Salary-Calculator-ultimate-CICD-pipeline/static/css/main.1db5757a.css.map",
-    "main.1867628b.js.map": "/Salary-Calculator-ultimate-CICD-pipeline/static/js/main.1867628b.js.map"
+    "main.05aab95b.js.map": "/Salary-Calculator-ultimate-CICD-pipeline/static/js/main.05aab95b.js.map"
   },
   "entrypoints": [
     "static/css/main.1db5757a.css",
-    "static/js/main.1867628b.js"
+    "static/js/main.05aab95b.js"
   ]
 }
