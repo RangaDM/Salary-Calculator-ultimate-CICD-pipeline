@@ -42,9 +42,14 @@ jobs:
         run: |
           git config --global user.email "rangamaithreepala@gmail.com"
           git config --global user.name "RangaDM"
-          echo ${{ github.sha }}
-          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/salary_calculator:${{ github.sha }}#g" deployment.yaml
-          git add -A
-          git commit -am "Update image for - ${{ github.sha }}"
-      - run: echo ${{ github }}
-      - run: git push origin master
+      - name: update deployment manifest
+        run: |
+          COMMIT_SHA=${{ github.sha }}
+          IMAGE_NAME="rangadm/salary_calculator:${COMMIT_SHA}"
+          sed -i "s#\(image: \).*#\1${IMAGE_NAME}#g" deployment.yaml
+          git add deployment.yaml
+          git commit -m "Update image to ${IMAGE_NAME}"
+      - name: push changes
+        run: |
+          git push origin main
+
